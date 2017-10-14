@@ -1,0 +1,17 @@
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+div
+{
+text-align:center;
+}
+
+canvas
+{
+	background: #eee;
+	display: block;
+	margin: 0 auto;
+}
