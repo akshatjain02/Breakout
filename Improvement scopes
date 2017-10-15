@@ -1,7 +1,6 @@
 Make starting page.
 Can make the ball move faster when hits the paddle.
 Can make dissappeared bricks reappear after 1-2 seconds.
-Ball reflects off the bricks after being halfway through. Can be improved.
 Toggle difficulty of game: change paddle size, speed of ball.
-Change the angle the ball bounces off the paddle.
+Change the angle the ball bounces off the paddle, linearly.
 Improve UI with CSS.
