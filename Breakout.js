@@ -262,34 +262,38 @@ function play()
 				collisionDetection();
 				drawScore();
 				drawLives();
-				if(y+dy<=ballRadius)
+				if(y+dy<ballRadius)
 				{
 					dy = -dy;
 				}
-				else if(y+dy>=canvas.height-ballRadius)
+				else if(x>=paddleX&&x<=paddleX+paddleWidth)
 				{
-					if(x>=paddleX&&x<=paddleX+paddleWidth){
+					if(y+dy>canvas.height-ballRadius-paddleHeight)
+					{
 						dy = -dy;
+					}
+				}
+				else if(y+dy>canvas.height-ballRadius)
+				{
+					lives--;
+					if(!lives)
+					{
+						alert("Game Over! Your score: "+score);
+						document.location.reload();
 					}
 					else
 					{
-						lives--;
-						if(!lives)
-						{
-							alert("Game Over! Your score: "+score);
-							document.location.reload();
-						}
-						else
-						{
-							x = canvas.width/2;
-							y = canvas.height - paddleHeight - ballRadius;
-							dx = 2;
-							dy = -2;
-							paddleX = (canvas.width - paddleWidth)/2;
-						}
+						x = canvas.width/2;
+						y = canvas.height - paddleHeight - ballRadius;
+						dx = 2;
+						dy = -2;
+						paddleX = (canvas.width - paddleWidth)/2;
 					}
 				}
-				if(x+dx>=canvas.width-ballRadius||x+dx<=ballRadius)
+
+
+
+				if(x+dx>canvas.width-ballRadius||x+dx<ballRadius)
 				{
 					dx = -dx;
 				}
