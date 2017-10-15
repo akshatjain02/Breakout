@@ -162,6 +162,7 @@ function play()
 
 
 
+
 						//for vertical collision
 						
 						if(b.status==1)
@@ -199,6 +200,45 @@ function play()
 							}
 						}
 
+
+
+
+						//for horizontal collision
+
+						if(b.status==1)
+						{
+							if(y>b.y-ballRadius&&y<b.y+ballRadius+brickHeight)
+							{
+								if(dx>0)
+								{
+									if(x>=b.x-ballRadius&&x-dx<b.x-ballRadius)
+									{
+										dx = -dx;
+										b.status = 0;
+										score++;
+										if(score==brickRowCount*brickColumnCount)
+										{
+											alert("You win!");
+											document.location.reload();
+										}
+									}
+								}
+								else
+								{
+									if(x<=b.x+brickWidth+ballRadius&&x-dy>b.x+brickWidth+ballRadius)
+									{
+										dx = -dx;
+										b.status = 0;
+										score++;
+										if(score==brickRowCount*brickColumnCount)
+										{
+											alert("You win!");
+											document.location.reload();
+										}
+									}
+								}
+							}
+						}
 
 
 
