@@ -159,20 +159,51 @@ function play()
 					for(r=0; r<brickRowCount; r++)
 					{
 						var b = bricks[c][r];
+
+
+
+						//for vertical collision
+						
 						if(b.status==1)
 						{
-							if(x>b.x&&x<b.x+brickWidth&&y>b.y&&y<b.y+brickHeight)
+							if(x>b.x-ballRadius&&x<b.x+brickWidth+ballRadius)
 							{
-								dy = -dy;
-								b.status = 0;
-								score++;
-								if(score==brickRowCount*brickColumnCount)
+								if(dy>0)
 								{
-									alert("You win!");
-									document.location.reload();
+									if(y>=b.y-ballRadius&&y-dy<b.y-ballRadius)
+									{
+										dy = -dy;
+										b.status = 0;
+										score++;
+										if(score==brickRowCount*brickColumnCount)
+										{
+											alert("You win!");
+											document.location.reload();
+										}
+									}
+								}
+								else
+								{
+									if(y<=b.y+brickHeight+ballRadius&&y-dy>b.y+brickHeight+ballRadius)
+									{
+										dy = -dy;
+										b.status = 0;
+										score++;
+										if(score==brickRowCount*brickColumnCount)
+										{
+											alert("You win!");
+											document.location.reload();
+										}
+									}
 								}
 							}
 						}
+
+
+
+
+
+
 					}
 				}
 			}
