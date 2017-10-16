@@ -18,8 +18,8 @@ function play()
 
 
 			//paddle details
-			var paddleHeight = 10;
-			var paddleWidth = 75;
+			var paddleHeight = 12;
+			var paddleWidth = 90;
 			var paddleX = (canvas.width - paddleWidth)/2;
 			var paddleY = (canvas.height - paddleHeight);
 
@@ -32,9 +32,9 @@ function play()
 
 
 			//bricks variables
-			var brickRowCount = 3;
-			var brickColumnCount = 10;
-			var brickWidth = 35;
+			var brickRowCount = 6;
+			var brickColumnCount = 9;
+			var brickWidth = 75;
 			var brickHeight = 20;
 			var brickPadding = 10;
 			var brickOffsetTop = 30;
@@ -106,6 +106,18 @@ function play()
 			{
 				ctx.beginPath();
 				ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
+				ctx.fillStyle = "#0095DD";
+				ctx.fill();
+				ctx.closePath();
+
+				ctx.beginPath();
+				ctx.arc(paddleX, paddleY+paddleHeight/2, paddleHeight/2, Math.PI/2, 3*Math.PI/2);
+				ctx.fillStyle = "#0095DD";
+				ctx.fill();
+				ctx.closePath();
+
+				ctx.beginPath();
+				ctx.arc(paddleX+paddleWidth, paddleY+paddleHeight/2, paddleHeight/2, 3*Math.PI/2, Math.PI/2);
 				ctx.fillStyle = "#0095DD";
 				ctx.fill();
 				ctx.closePath();
@@ -316,6 +328,6 @@ function play()
 
 
 
-			setInterval(draw,10);
+			setInterval(draw,7);
 			//draw();
 			}
