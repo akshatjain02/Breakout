@@ -1,7 +1,7 @@
 function play()
 			{
-			document.getElementById("startButton").innerHTML = "";
-			
+			document.getElementById("startButtonContainer").innerHTML = "";
+
 
 
 			//global variables
@@ -22,7 +22,7 @@ function play()
 			var paddleWidth = 75;
 			var paddleX = (canvas.width - paddleWidth)/2;
 			var paddleY = (canvas.height - paddleHeight);
-			
+
 
 
 			//keypress booleans
@@ -54,7 +54,7 @@ function play()
 			}
 
 
-			
+
 			//Event Listeners
 			document.addEventListener("keydown", keyDownHandler,false);
 			document.addEventListener("keyup", keyUpHandler, false);
@@ -164,7 +164,7 @@ function play()
 
 
 						//for vertical collision
-						
+
 						if(b.status==1)
 						{
 							if(x>b.x-ballRadius&&x<b.x+brickWidth+ballRadius)
@@ -306,7 +306,7 @@ function play()
 					dx = -dx;
 				}
 				x += dx;
-				y += dy;				
+				y += dy;
 				if(rightPressed&&paddleX<canvas.width-paddleWidth)
 					paddleX += 7;
 				else if(leftPressed&&paddleX>0)
