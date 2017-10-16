@@ -10,8 +10,9 @@
 
 
 	<body>
+		<script src="Breakout.js"></script>
 		<canvas id="myCanvas" width="480" height="320"></canvas>
-		<script>
+    <script>
 		{
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
@@ -20,10 +21,8 @@
 			ctx.fillText("Breakout", 100, 160);
 		}
 		</script>
-
-		<script src="Breakout.js"></script>
-		<div>
-		<button id="startButton" onclick="play()">Start!</button>
+		<div id="startButtonContainer">
+			<button id="startButton" onclick="play()">Start!</button>
 		</div>
 	</body>
 
