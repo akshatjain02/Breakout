@@ -16,7 +16,7 @@ canvas
 	margin: 0 auto;
 }
 
-#startButton
+#startButtonClassic
 {
 	padding: 10px 30px;
 	border: 0px;
@@ -28,6 +28,22 @@ canvas
 	color: #FFF;
 }
 
-#startButton:active {
+#startButtonClassic:active {
+	background-color: #959595;
+}
+
+#startButtonArcade
+{
+	padding: 10px 30px;
+	border: 0px;
+	margin:4px;
+	background-color: #5DBCD2;
+	font-family: Roboto;
+	border-radius: 5px;
+	font-size: 15px;
+	color: #FFF;
+}
+
+#startButtonArcade:active {
 	background-color: #959595;
 }
