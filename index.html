@@ -11,14 +11,16 @@
 
 	<body>
 		<script src="Breakout.js"></script>
-		<canvas id="myCanvas" width="810" height="540"></canvas>
-    		<script>
+		<div class="canvasDiv">
+		<canvas id="myCanvas" width="810" height="540" style="background: url('https://s-media-cache-ak0.pinimg.com/736x/48/09/2a/48092a026928bd10576536b9326c0c2d.jpg'")></canvas>
+		</div>
+    	<script>
 		{
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
-			ctx.font = "72px Helvetica";
-			ctx.fillStyle = "#FFF";
-			ctx.fillText("Breakout", 270, 270);
+			ctx.font = "72px Roboto";
+			ctx.fillStyle = "#6B64FF";
+			ctx.fillText("Breakout", 245, 270);
 		}
 		</script>
 		<div id="startButtonContainer">
