@@ -15,6 +15,8 @@ function playClassic()
 			var score = 0;
 			var lives = 3;
 			var frameRate = 6;
+			var brickColors = ["#CD3ECF", "#FA5255", "#FF811E", "#0CB01C", "#6B64FF"];
+
 
 
 			//paddle details
@@ -32,7 +34,7 @@ function playClassic()
 
 
 			//bricks variables
-			var brickRowCount = 4;
+			var brickRowCount = 5;
 			var brickColumnCount = 9;
 			var brickWidth = 75;
 			var brickHeight = 30;
@@ -97,7 +99,7 @@ function playClassic()
 			{
 				ctx.beginPath();
 				ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#000";
 				ctx.fill();
 				ctx.closePath();
 			}
@@ -106,19 +108,19 @@ function playClassic()
 			{
 				ctx.beginPath();
 				ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#FFF";
 				ctx.fill();
 				ctx.closePath();
 
 				ctx.beginPath();
 				ctx.arc(paddleX, paddleY+paddleHeight/2, paddleHeight/2, Math.PI/2, 3*Math.PI/2);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#FFF";
 				ctx.fill();
 				ctx.closePath();
 
 				ctx.beginPath();
 				ctx.arc(paddleX+paddleWidth, paddleY+paddleHeight/2, paddleHeight/2, 3*Math.PI/2, Math.PI/2);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#FFF";
 				ctx.fill();
 				ctx.closePath();
 			}
@@ -129,6 +131,7 @@ function playClassic()
 				{
 					for(r=0; r<brickRowCount; r++)
 					{
+						ctx.fillStyle = brickColors[r];
 						if(bricks[c][r].status==1)
 						{
 							var brickX = brickOffsetLeft + c*(brickPadding + brickWidth);
@@ -137,7 +140,6 @@ function playClassic()
 							bricks[c][r].y = brickY;
 							ctx.beginPath();
 							ctx.rect(brickX, brickY, brickWidth, brickHeight);
-							ctx.fillStyle = "#0095DD";
 							ctx.fill();
 							ctx.closePath();
 						}
@@ -359,6 +361,7 @@ function playArcade()
 			var score = 0;
 			var lives = 3;
 			var frameRate = 8;
+			var brickColors = ["#CD3ECF", "#FA5255", "#FF811E", "#0CB01C", "#6B64FF"];
 
 
 
@@ -377,7 +380,7 @@ function playArcade()
 
 
 			//bricks variables
-			var brickRowCount = 4;
+			var brickRowCount = 5;
 			var brickColumnCount = 9;
 			var brickWidth = 75;
 			var brickHeight = 30;
@@ -452,7 +455,7 @@ function playArcade()
 			{
 				ctx.beginPath();
 				ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#FFF";
 				ctx.fill();
 				ctx.closePath();
 			}
@@ -461,19 +464,19 @@ function playArcade()
 			{
 				ctx.beginPath();
 				ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#FFF";
 				ctx.fill();
 				ctx.closePath();
 
 				ctx.beginPath();
 				ctx.arc(paddleX, paddleY+paddleHeight/2, paddleHeight/2, Math.PI/2, 3*Math.PI/2);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#FFF";
 				ctx.fill();
 				ctx.closePath();
 
 				ctx.beginPath();
 				ctx.arc(paddleX+paddleWidth, paddleY+paddleHeight/2, paddleHeight/2, 3*Math.PI/2, Math.PI/2);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#FFF";
 				ctx.fill();
 				ctx.closePath();
 			}
@@ -484,6 +487,7 @@ function playArcade()
 				{
 					for(r=0; r<brickRowCount; r++)
 					{
+						ctx.fillStyle = brickColors[r];
 						if(bricks[c][r].status==1)
 						{
 							var brickX = brickOffsetLeft + c*(brickPadding + brickWidth);
@@ -492,7 +496,6 @@ function playArcade()
 							bricks[c][r].y = brickY;
 							ctx.beginPath();
 							ctx.rect(brickX, brickY, brickWidth, brickHeight);
-							ctx.fillStyle = "#0095DD";
 							ctx.fill();
 							ctx.closePath();
 						}
@@ -505,7 +508,6 @@ function playArcade()
 								bricks[c][r].y = brickY;
 								ctx.beginPath();
 								ctx.rect(brickX, brickY, brickWidth, brickHeight);
-								ctx.fillStyle = "#0095DD";
 								ctx.fill();
 								ctx.closePath();
 							}
