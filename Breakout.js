@@ -239,7 +239,7 @@ function playClassic()
 								}
 								else
 								{
-									if(x<=b.x+brickWidth+ballRadius&&x-dy>b.x+brickWidth+ballRadius)
+									if(x<=b.x+brickWidth+ballRadius&&x-dx>b.x+brickWidth+ballRadius)
 									{
 										dx = -dx;
 										b.status = 0;
@@ -360,7 +360,7 @@ function playArcade()
 			var ballRadius = 10;
 			var score = 0;
 			var lives = 3;
-			var frameRate = 8;
+			var frameRate = 6;
 			var brickColors = ["#CD3ECF", "#FA5255", "#FF811E", "#0CB01C", "#6B64FF"];
 
 
@@ -600,7 +600,7 @@ function playArcade()
 								}
 								else
 								{
-									if(x<=b.x+brickWidth+ballRadius&&x-dy>b.x+brickWidth+ballRadius)
+									if(x<=b.x+brickWidth+ballRadius&&x-dx>b.x+brickWidth+ballRadius)
 									{
 										dx = -dx;
 										b.status = 0;
