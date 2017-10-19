@@ -455,7 +455,7 @@ function playArcade()
 			{
 				ctx.beginPath();
 				ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-				ctx.fillStyle = "#FFF";
+				ctx.fillStyle = "#000";
 				ctx.fill();
 				ctx.closePath();
 			}
